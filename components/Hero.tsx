@@ -1,6 +1,6 @@
 import React from 'react'
 import { useRef, useState } from "react"
-import { youtube_parser } from '@/pages/utils'
+import { youtube_parser } from './utils';
 import axios from "axios"
 import { FormEvent } from 'react';
 
