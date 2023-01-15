@@ -2,6 +2,7 @@ import React from 'react'
 import { useRef, useState } from "react"
 import { youtube_parser } from '@/pages/utils'
 import axios from "axios"
+import { FormEvent } from 'react';
 
 type Props = {}
 
@@ -10,8 +11,8 @@ function Hero({}: Props) {
     const inputUrlRef = useRef<any>()
     const [urlResult, setUrlResult] = useState(null);
     
-    const handleSubmit = (e: React.ChangeEvent<HTMLInputElement>) => {
-        e.preventDefault()
+    const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
+        event.preventDefault()
         const youtubeID = youtube_parser(inputUrlRef.current.value);
         console.log(youtubeID)
 
@@ -39,7 +40,7 @@ function Hero({}: Props) {
             <div className='container flex flex-col md:flex-row items-center px-6 space-y-0 md:space-y-0 mx-auto mt-10'>
                 <div className='flex flex-col mb-32 space-y-12 md:space-y-8 md:w-1/2'>
                     <h1 className='max-w-md text-4xl font-bold text-center text-[#a6adba] md:text-5xl md:text-left'>Youtube to MP3 converter</h1>
-                    <form onSubmit={handleSubmit}>
+                    <form onSubmit={(event: FormEvent<HTMLFormElement>) => handleSubmit(event)}>
                         <input ref={inputUrlRef} placeholder='Paste a Youtube url' type="text" className='peer h-10 w-full border-b-2 border-gray-300 text-white outline-none focus:border-rose-600 bg-transparent placeholder-transparent'></input>
                         <label className='left-0 -top-16 relative text-[#a6adba] text-sm peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-400 peer-placeholder-shown:-top-8'>Paste a Youtube url</label>
                         <div className='flex justify-center md:justify-start mt-5'>
