@@ -7,7 +7,7 @@ type Props = {}
 
 function Hero({}: Props) {
 
-    const inputUrlRef = useRef();
+    const inputUrlRef = useRef<any>()
     const [urlResult, setUrlResult] = useState(null);
     
     const handleSubmit = (e: React.ChangeEvent<HTMLInputElement>) => {
