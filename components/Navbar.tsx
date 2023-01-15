@@ -5,7 +5,7 @@ type Props = {}
 
 const Navbar = (props: Props) => {
   return (
-    <nav className='relative container mx-auto p-6'>
+    <nav className='relative container mx-auto md:mx-28 p-6'>
         <div className='flex items-center justify-between'>
             <div className='text-[#a6adba] font-bold md:text-2xl'>
             <SocialIcon url="https://www.youtube.com" fgColor="#da1a4e" bgColor="transparent" style={{ height: 50, width: 50 }}/>
