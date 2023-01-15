@@ -10,7 +10,7 @@ function Hero({}: Props) {
     const inputUrlRef = useRef();
     const [urlResult, setUrlResult] = useState(null);
     
-    const handleSubmit = (e) => {
+    const handleSubmit = (e: React.ChangeEvent<HTMLInputElement>) => {
         e.preventDefault()
         const youtubeID = youtube_parser(inputUrlRef.current.value);
         console.log(youtubeID)
